@@ -6,7 +6,7 @@ import (
 
 	"github.com/labstack/echo"
 
-	"github.com/aknfujii/faker"
+	faker "github.com/eykn2z/go_faker"
 )
 
 func GetPersons(w http.ResponseWriter, r *http.Request) {
