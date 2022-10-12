@@ -25,14 +25,15 @@ func main() {
 
 	switch serverType {
 	case SERVER_TYPE_NET_HTTP:
-		//TODO: logの出し方
-		router.SetRouter()
-		err := http.ListenAndServe(port, nil)
+		router := router.NewNetHttpRouter()                   //http.ServeMuxはServeHTTPをメソッドに持つ
+		err := http.ListenAndServe(port, handler.Log(router)) //HandlerはServeHTTPをメソッドに持つインターフェース
 		if err != nil {
-			log.Fatal(err)
+			log.Fatal("[FAILED] start sever error: %v", err)
 		}
 	case SERVER_TYPE_MUX:
-		if err := http.ListenAndServe(port, handler.Log(router.NewMuxRouter())); err != nil {
+		router := router.NewMuxRouter()
+		err := http.ListenAndServe(port, handler.Log(router))
+		if err != nil {
 			log.Fatalln("[FAILED] start sever error: %v", err)
 		}
 	case SERVER_TYPE_ECHO:

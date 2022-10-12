@@ -1,3 +1,0 @@
-[submodule "pkg/go_faker"]
-	path = pkg/go_faker
-	url = git@github.com:eykn2z/go_faker.git
