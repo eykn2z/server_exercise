@@ -2,3 +2,5 @@
     - https://qiita.com/kiyc/items/c20ac7bb6997c0753314
 - handlerについて
     - https://qiita.com/immrshc/items/1d1c64d05f7e72e31a98
+- http.ServeMuxとgorilla/Muxの違い
+  - https://note.com/artefactnote/n/ncb2027ce8191
