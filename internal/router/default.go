@@ -2,7 +2,7 @@ package router
 
 import (
 	"net/http"
-	"server/handler"
+	"server/internal/handler"
 )
 
 func getRouter() *http.ServeMux {
